@@ -86,7 +86,7 @@ export default function Footer() {
                             {[
                                 { label: 'Paket Hemat 10 Mbps', price: 'Rp150.000' },
                                 { label: 'Paket Keluarga 15 Mbps', price: 'Rp200.000' },
-                                { label: 'Paket Pro 20 Mbps', price: 'Rp250.000' },
+                                { label: 'Paket Pro 25 Mbps', price: 'Rp250.000' },
                             ].map((service, index) => (
                                 <li key={index} className="text-white/60">
                                     <span className="block text-sm">{service.label}</span>

@@ -20,7 +20,7 @@ const orbitron = Orbitron({
 
 export const metadata: Metadata = {
     title: "P8 NET - Internet Rumah Cepat & Stabil",
-    description: "Penyedia layanan internet rumah terpercaya dengan koneksi cepat dan stabil. Paket mulai dari Rp150.000/bulan dengan kecepatan hingga 20 Mbps.",
+    description: "Penyedia layanan internet rumah terpercaya dengan koneksi cepat dan stabil. Paket mulai dari Rp150.000/bulan dengan kecepatan hingga 25 Mbps.",
     keywords: ["internet rumah", "wifi rumah", "provider internet", "P8 NET", "internet cepat", "internet murah"],
     authors: [{ name: "P8 NET" }],
     openGraph: {

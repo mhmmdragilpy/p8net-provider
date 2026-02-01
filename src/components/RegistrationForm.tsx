@@ -26,9 +26,9 @@ const packages: Package[] = [
     {
         id: '3',
         name: 'Pro',
-        speed_mbps: 20,
+        speed_mbps: 25,
         price: 250000,
-        features: ['Kecepatan hingga 20 Mbps', 'Unlimited Quota', 'Support 24/7', 'Cocok untuk 10+ Device', 'Priority Support'],
+        features: ['Kecepatan hingga 25 Mbps', 'Unlimited Quota', 'Support 24/7', 'Cocok untuk 10+ Device', 'Priority Support'],
         created_at: new Date().toISOString(),
     },
 ];
