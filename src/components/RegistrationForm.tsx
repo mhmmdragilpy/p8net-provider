@@ -1,9 +1,17 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { supabase, Package, isSupabaseConfigured } from '@/lib/supabase';
 import { useAppStore } from '@/stores/useAppStore';
 import { validateWhatsAppNumber, createWhatsAppLink, formatPrice } from '@/lib/utils';
+
+interface Package {
+    id: string;
+    name: string;
+    speed_mbps: number;
+    price: number;
+    features: string[];
+    created_at: string;
+}
 
 // Static packages data
 const packages: Package[] = [
@@ -96,17 +104,6 @@ export default function RegistrationForm() {
         setIsSubmitting(true);
 
         try {
-            // Submit to Supabase if configured
-            if (isSupabaseConfigured()) {
-                await supabase.from('leads').insert({
-                    full_name: formData.fullName.trim(),
-                    whatsapp: formData.whatsapp.trim(),
-                    address: formData.address.trim(),
-                    package_id: formData.packageId,
-                    status: 'new_lead',
-                });
-            }
-
             setIsSuccess(true);
 
             // Get selected package info
@@ -167,7 +164,7 @@ _Dikirim via P8 NET Website_`;
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-2">Pendaftaran Berhasil!</h3>
                 <p className="text-foreground-muted mb-6">
-                    Tim kami akan segera menghubungi Anda melalui WhatsApp.
+                    Anda akan diarahkan ke WhatsApp untuk menyelesaikan pemesanan.
                 </p>
                 <button
                     onClick={() => {

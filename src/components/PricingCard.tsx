@@ -2,8 +2,17 @@
 
 import Link from 'next/link';
 import { formatPrice } from '@/lib/utils';
-import { Package } from '@/lib/supabase';
 import { useAppStore } from '@/stores/useAppStore';
+
+interface Package {
+    id: string;
+    name: string;
+    speed_mbps: number;
+    price: number;
+    features: string[];
+    is_popular?: boolean;
+    created_at: string;
+}
 
 interface PricingCardProps {
     package_: Package;

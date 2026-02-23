@@ -1,14 +1,18 @@
 import { create } from 'zustand';
-import { Package, Lead } from '@/lib/supabase';
+
+interface Package {
+    id: string;
+    name: string;
+    speed_mbps: number;
+    price: number;
+    features: string[];
+    created_at: string;
+}
 
 interface AppState {
     // Selected package for registration
     selectedPackage: Package | null;
     setSelectedPackage: (pkg: Package | null) => void;
-
-    // Leads for admin dashboard
-    leads: Lead[];
-    setLeads: (leads: Lead[]) => void;
 
     // Loading states
     isLoading: boolean;
@@ -18,9 +22,6 @@ interface AppState {
 export const useAppStore = create<AppState>((set) => ({
     selectedPackage: null,
     setSelectedPackage: (pkg) => set({ selectedPackage: pkg }),
-
-    leads: [],
-    setLeads: (leads) => set({ leads }),
 
     isLoading: false,
     setLoading: (isLoading) => set({ isLoading }),
